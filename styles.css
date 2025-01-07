@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+
+/********************* NOTES ************************
+The basic resets below allow you to create your own styling
+without having to fight some of the most annoying built in 
+agent user styles.
+****************************************************/
+
+/************* Basic Resets ***************/
+
+h1, h2, h3, h4, p, ul, ol, blockquote {
+	margin: 0;
+	padding: 0;
+}
+
+nav ul, nav ol {
+	list-style-type: none;
+}
+
+/******** Additional resets *********/
+a { text-decoration:none; }
+
+img {
+	display: block;
+	max-width:100%; 
+	height: auto;
+}
+
+* { box-sizing: border-box; }
+
+/************ End CSS Reset  *************/
+
+
+/********************* NOTES ************************
+Below are the only colors I have used. Choose four new
+colors and do a find and replace to replace the hex codes.
+****************************************************/
+
+
+/*********** Colors ***********
+
+primary = #b5b5b5;
+secondary = #efefef;
+accent = #201E43
+text default = #333333;
+
+
+********************************/
+
+
+/************* Basic Page Rules ************/
+
+
+/********************* NOTES ************************
+I set the background of the page to dark and the main
+font to Georgia for most of the type. The header font
+is set to Arial. You could get two fonts that work well
+together and replace these choices. You may have to adjust
+sizing and spacing as well.
+****************************************************/
+
+
+body {
+	font-family:Roboto, 'Times New Roman', Times, serif;
+	color:#F0ECE5;
+	background:#140f3b;
+}
+
+/************* typography ************/
+
+h1, h2, h3, h4, nav { 
+	font-family:Georgia, 'Times New Roman', Times, serif;
+	margin-top: 0.4em;
+}
+
+h1 {
+	font-size:250%;
+	margin-bottom:1em;
+	margin-left: 0.7em;
+}
+
+h2 {
+	font-size:170%;
+	margin-bottom:1em;
+	/* margin-left: 0.3em; */
+}
+
+h3 { 
+	font-size:135%;
+	margin-bottom:1em;
+	margin-left: 0.5em;
+}
+
+h4 { 
+	font-size:115%;
+	margin-bottom:.5em;
+}
+	
+p {
+	line-height:1.5em;
+	margin-left: 0.8em;
+	margin-bottom:1em;
+	
+}
+
+a { color: #dfdad0; }
+
+.social { font-size:175%; }
+
+.centered { text-align:center; }
+
+/****************** Grid ******************/
+
+.secondary { background: #31304D; }
+.primary { background: #201E43; }
+
+
+/****************** Header and Main Navigation ****************/
+
+header {
+	padding: 20px;
+}
+
+header .wrapper {
+	display: flex;
+	flex-direction: column-reverse;
+	flex-wrap: wrap;
+}
+
+.logo-container {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+}
+
+#logo {
+	margin-right:20px;
+}
+
+
+#mainnav {
+	margin-bottom: 20px;
+}
+
+#mainnav ul {
+	display: flex;
+	justify-content: center;
+}
+
+#mainnav ul li a {
+	display:block;
+	color: #8790a0;
+	border-left: 2px solid #B6BBC4;
+	padding:0 20px;
+	font-size:20px;
+}
+
+/********************* NOTES ************************
+Removes the border on the first link...
+****************************************************/
+
+#mainnav ul li:first-of-type a {
+	border:none;
+}
+
+
+/**************** Grid Layout for Projects ****************/
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    justify-items: center; /* Centers all grid items within their respective columns */
+}
+
+.projects-grid article {
+    background: #444175;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px #F0ECE5;
+    text-align: center;
+}
+
+.projects-grid img {
+    width: 90%; /* Maintains image width */
+    height: auto;
+    border-radius: 5px;
+    margin-left: 10px; /* Shifts image slightly to the right */
+    margin-bottom: 15px;
+}
+
+.projects-grid h3 {
+    margin: 20px;
+    color: #F0ECE5;
+}
+
+.projects-grid p {
+    font-size: 90%;
+    color: #dfdad0;
+    line-height: 1.5em;
+    margin: 20px;
+	margin-bottom: 30px;
+}
+
+.projects-grid .role {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #8790a0;
+}
+
+
+/***************** Section Specific Rules *****************/
+
+#work {
+	color: #31304D;
+	background:#838da0;
+	padding: 20px;
+}
+
+#work img, .additional-projects img {
+	width: 95%;
+	margin-bottom: 10px;
+	margin-left: 0.2em;
+}
+
+#work h2 {
+	margin-left: 8px;
+}
+
+#work h4 {
+	margin-left: 10px;
+}
+
+.featured, .projects, #page-template #work section {
+	margin-bottom: 40px;
+}
+
+#about-contact, .additional-projects {
+	padding: 20px;
+}
+
+#about-contact article {
+	margin-left: 0.9em;
+	margin-top: 0.4em;
+}
+
+#about-contact p {
+	margin-top: -10px
+}
+
+#about-contact img {
+	margin-top: 2em;
+}
+
+/********************* NOTES ************************
+I added all this margin to the bottom of the footer so
+that when you click the link for "about" or "contact" in
+the main nav, there is room for them to go all the way to
+the top of the page.
+****************************************************/
+
+
+footer {
+	padding: 20px;
+	/* margin-bottom:600px; */
+}
+
+@media only screen and (min-width: 650px) {
+	#work {
+		padding: 20px 10px;
+	}
+	
+	#work article, h2 {
+		padding: 0 10px;
+	}
+	
+	.projects, #page-template #work section  {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.projects article, #page-template #work section article {
+		width: 50%;
+	}
+	
+	.additional-projects .wrapper{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.additional-projects h2 {
+		flex-basis: 100%;
+	}
+	
+	.additional-projects article {
+		width: 50%;
+		padding: 0 10px;
+	}
+	
+	#about-contact {
+		padding: 0;
+	}
+	
+	#about-contact .wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		padding: 20px 10px;
+	}
+	
+	#about-contact .profile-photo {
+		flex: 1;
+		padding: 0 10px;
+		width: 100%;
+	}
+	
+	#about-contact article {
+		padding: 0 10px;
+	}
+	
+	#about-contact article:first-of-type {
+		flex: 2;
+	}
+	
+	#about-contact article:last-of-type {
+		flex-basis: 100%;
+	}
+	
+}
+
+@media only screen and (min-width: 768px) {
+	
+	.featured {
+		display: flex;
+	}
+	
+	.featured article {
+		flex: 1;
+	}
+	
+	.additional-projects article {
+		width: 25%;
+	}
+	
+	#about-contact .wrapper {
+		flex-wrap: nowrap;
+	}
+	
+	#about-contact article:last-of-type {
+		flex: 2;
+		flex-basis: 0;
+	}
+}
+
+@media only screen and (min-width: 1040px) {
+	.wrapper {
+		width: 1020px;
+		margin: auto;
+	}
+	
+	header .wrapper {
+		padding: 0 10px;
+	}
+	
+	/*Change the width here to 33% if you want three articles in a row*/
+	.projects article {
+		width: 25%;
+	}
+}
